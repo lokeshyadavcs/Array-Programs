@@ -8,19 +8,17 @@ public class ArrayRotation1 {
     
     static void left(int a[], int n, int d) {
         int arr[] = new int[n];
-        int i,j;
+        int i,j,s=n;
         int b = check(a, d, n);
-        for (j=0,i = b+1; i < n; j++,i++) {
+      for (j=0,i = b+1; i < n; j++,i++) {
             arr[j] = a[i];
 
 
         }
-        for(i =b;i>=0;i--){
-            arr[j]=a[i];
-            j++;
-        }
-
-        for (i = 0; i < n; i++) {
+       for(i=n-1;i>=j;i--,b--){
+           arr[i]=a[b];
+       }
+        for (i = 0; i < s; i++) {
             System.out.println(arr[i]);
         }
     }
